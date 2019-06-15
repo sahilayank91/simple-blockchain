@@ -1,11 +1,39 @@
-### Node Express template project
+# Simple-Blockchain
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/gitlab-basics/create-project.html).
+### Motivation
+All the current implementations of blockchains are tightly coupled with the larger context and problems they (e.g. Bitcoin or Ethereum) are trying to solve. This makes understanding blockchains a necessarily harder task, than it must be. Especially source-code-wisely. This project is an attempt to provide as concise and simple implementation of a blockchain as possible.
 
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/express).
+ 
+### What is blockchain
+[From Wikipedia](https://en.wikipedia.org/wiki/Blockchain_(database)) : Blockchain is a distributed database that maintains a continuously-growing list of records called blocks secured from tampering and revision.
 
-### CI/CD with Auto DevOps
+### Key concepts of Naivechain
+* NodeJS implementation for creating webapp to process blockchain
+* HTTP interface to control the node
+* Use Websockets to communicate with other nodes (P2P)
+* Super simple "protocols" in P2P communication
+* Data is not persisted in nodes
+* No proof-of-work or proof-of-stake: a block can be added to the blockchain without competition
 
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
 
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enabling-auto-devops) in the project settings.
+![alt tag](naivechain_blockchain.png)
+
+![alt tag](naivechain_components.png)
+
+
+
+### Quick start
+```
+npm install
+npm start
+```
+
+### HTTP API
+##### Get blockchain
+```
+curl http://localhost:3000/getBlockChain
+```
+##### Create block
+```
+http://localhost:3000/addBlock
+``` 
