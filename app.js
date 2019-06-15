@@ -1,3 +1,5 @@
+global.__BASE__ = __dirname + "/";
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,7 +13,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(express.static(path.join(__BASE__, 'public')));
+app.use('/bower', express.static(path.join(__dirname, 'bower_components')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

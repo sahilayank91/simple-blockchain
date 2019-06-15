@@ -1,0 +1,37 @@
+
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <% include layout.ejs %>
+    <title>Block Chain</title>
+</head>
+
+<body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="/public/angular/blockchain-app.js"/>-->
+
+<div ng-app="BlockChainApplication" ng-controller="IndexController">
+    <div class="container" style="align-content: center; align-self: center; align-items: center; margin-top: 60px">
+        <h3>Insert Data into the Block Chain</h3>
+        <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter the data you want to enter into the blockchain</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="data" placeholder="Enter data">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+        </div>
+
+        <button type="button" ng-click =addBlock() class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+        <button type="button" class="btn btn-success" ng-click="getBlockChain()">Get the Blockchain</button>
+    </div>
+</div>
+</body>
+
+</html>

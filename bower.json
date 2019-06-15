@@ -1,0 +1,45 @@
+{
+  "name": "Blockchain",
+  "version": "0.0.1",
+  "authors": [
+    "Sahil Ayank <sahilayank91@gmail.com>"
+  ],
+  "description": "Takshila",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-ui": "~0.4.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-grid": "~3.1.0",
+    "bootstrap": "~3.3.5",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "moment": "~2.10.6",
+    "font-awesome": "~4.4.0",
+    "ng-tags-input": "3.0.0",
+    "ng-file-upload": "~11.1.1",
+    "angular-bootstrap": "~1.1.2",
+    "angular-loading-bar": "~0.8.0",
+    "angular-bootstrap-lightbox": "^0.12.0",
+    "bootstrap-ui-datetime-picker": "^2.4.3",
+    "angular-summernote": "^0.8.1",
+    "angular-sanitize": "~1.5.8",
+    "fullcalendar": "^3.1.0",
+    "angular-chart.js": "^1.1.1",
+    "intro.js": "^2.7.0"
+  },
+  "resolutions": {
+    "angular-bootstrap": "~1.1.2",
+    "angular": "~1.4.6",
+    "webcomponentsjs": "^0.6.0",
+    "intro.js": "^2.7.0",
+    "moment": ">=2.10.5"
+  }
+}
