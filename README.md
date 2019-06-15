@@ -25,7 +25,7 @@ npm start
 ### HTTP API
 ##### Get blockchain
 ```
-curl http://localhost:3000/getBlockChain
+http://localhost:3000/getBlockChain
 ```
 ##### Create block
 ```
