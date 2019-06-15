@@ -26,7 +26,7 @@ BlockChainApplication.service('Service', ['$http', '$q',  function ($http, $q) {
         getBlockChain: function (params) {
             var deferred = $q.defer();
             var deferredData = {};
-            var url = '/getBlockChain'
+            var url = 'http://localhost:3000/getBlockChain';
             // var url = UIUtilityService.getURL('features').getSMSHistoryOfRecord;
 
             $http({method: 'GET', url: url}).success(function (data, status, headers, config) {

@@ -23,7 +23,7 @@ let MessageType = {
 };
 
 const getGenesisBlock = function(){
-    return new Block(0,'0','816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7','my genesis block!!',new Date().getTime()/1000);
+    return new Block(0,'0','816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7','This is the genesis block!!',new Date().getTime()/1000);
 }
 let blockchain = [getGenesisBlock()];
 
@@ -33,6 +33,7 @@ let blockchain = [getGenesisBlock()];
 }
 
 let calculateHash = (index, previousHash, timestamp, data) => {
+
     return CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
 };
 var generateNextBlock = (blockData) => {
@@ -40,7 +41,8 @@ var generateNextBlock = (blockData) => {
     var nextIndex = previousBlock.index + 1;
     var nextTimestamp = new Date().getTime() / 1000;
     var nextHash = calculateHash(nextIndex, previousBlock.hash, nextTimestamp, blockData);
-    return new Block(nextIndex, previousBlock.hash, nextTimestamp, blockData, nextHash);
+
+    return new Block(nextIndex, previousBlock.hash,nextHash,blockData ,nextTimestamp);
 };
  const addBlock = function(data){
      let newblock = generateNextBlock(data);
@@ -62,7 +64,7 @@ var isValidNewBlock = (newBlock, previousBlock) => {
         console.log('invalid previoushash');
         return false;
     } else if (calculateHashForBlock(newBlock) !== newBlock.hash) {
-        console.log(typeof (newBlock.hash) + ' ' + typeof calculateHashForBlock(newBlock));
+        console.log( (newBlock.hash) + ' ' + typeof calculateHashForBlock(newBlock));
         console.log('invalid hash: ' + calculateHashForBlock(newBlock) + ' ' + newBlock.hash);
         return false;
     }
