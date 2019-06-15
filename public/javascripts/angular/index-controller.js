@@ -6,7 +6,7 @@ BlockChainApplication.controller('IndexController', ['$scope', '$state', '$windo
 
             Service.addBlock(parameters)
                 .then(function(data){
-                    console.log(data);
+
                     $scope.data = ''
                     $scope.getBlockChain();
                 })
@@ -17,7 +17,7 @@ BlockChainApplication.controller('IndexController', ['$scope', '$state', '$windo
     $scope.getBlockChain = function(){
         Service.getBlockChain()
             .then(function(data){
-                console.log(data);
+
                 $scope.chain = data.data;
             })
     }
